@@ -2,7 +2,7 @@
  * GLOBAL SETTING VARIABLES
  */
 
-const TIME_TO_WAIT = 5;
+const TIME_TO_WAIT = 30;
 const NUM_TOT = 5;
 /*********************
   Functions
