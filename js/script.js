@@ -23,7 +23,7 @@ const fillRand = ((num) => {
 const construct = ((container,array, timeLeft) =>{
     let content = `
         <div class="center-piece">
-        <span>Hai ${timeLeft} secondi per memorizzare i numeri</span>
+        <span class="time-text">Hai ${timeLeft} secondi per memorizzare i numeri</span>
             <div class="num-array">
                 <div class="num-element">${array[0]}</div>
                 <div class="num-element">${array[1]}</div>
@@ -38,27 +38,31 @@ const construct = ((container,array, timeLeft) =>{
 });
 
 const changeText = ((timeLeft) =>{
-    const timeText = document.querySelector('#time_text');
+    const timeText = document.querySelector(".time-text");
     let newText = `Hai ${timeLeft} secondi per memorizzare i numeri`;
     timeText.innerHTML = newText;
 });
 
 const play = ((container) =>{
-    let numList = fillRandom(5);
+    let numList = fillRand(5);
     let time = TIME_TO_WAIT;
     construct(container, numList, time);
-    const countdown = setInterval()
+    const countdown = setInterval(count = () =>{
+        changeText(--time);
+    }, 1000);
+
+    setTimeout(() =>{
+        clearInterval(countdown);
+    }
+    , (TIME_TO_WAIT + 1) * 1000);
+    
 
 });
 
-const countdown = setInterval()
 
 /*****************
  * EXEC
  */
  const container = document.querySelector("#container");
 
-let array = fillRand(5);
-console.log(array);
-
-construct(container, array,10);
+play(container);
