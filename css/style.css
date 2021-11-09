@@ -1,0 +1,47 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.mp-main{
+    background-color: violet;
+    height: 100vh;
+}
+
+.center-piece{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-flow: column;
+    height: 200px;
+    width: 500px;
+    background-color: white;
+}
+
+.center-piece > .num-array{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 80px;
+    width: 80%;
+    border: 1px solid black;
+    background-color: gray;
+}
+
+.center-piece > span{
+    font-size: 20px;
+    
+}
+
+.num-array > .num-element{
+    border: 1px solid black;
+    height: 70px;
+    width: 70px;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 40px;
+    font-weight: 700;
+} 
